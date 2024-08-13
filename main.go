@@ -91,7 +91,7 @@ func main() {
 				log.Fatal(err)
 			}
 			if status {
-				println(filePath)
+				fmt.Printf("Found %s file\n", filePath)
 			}
 		case "docx":
 			status, err := searchInDOCX(filePath, searchWord)
@@ -99,7 +99,7 @@ func main() {
 				log.Fatal(err)
 			}
 			if status {
-				println(filePath)
+				fmt.Printf("Found %s file\n", filePath)
 			}
 		case "jpeg", "jpg", "png":
 			status, err := searchInImage(filePath, searchWord)
@@ -107,7 +107,7 @@ func main() {
 				log.Fatal(err)
 			}
 			if status {
-				println(filePath)
+				fmt.Printf("Found %s file\n", filePath)
 			}
 		default:
 			fmt.Printf("Unsupported file type: %s\n", file.Name())
